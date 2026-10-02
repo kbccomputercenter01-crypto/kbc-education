@@ -1,0 +1,16 @@
+# Local environment and private credentials
+.env
+.env.*
+secrets/
+*.key
+*.pem
+
+# Operating-system and editor temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
