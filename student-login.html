@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#071426">
+  <title>Student Login | KBC Computer Education</title>
+  <meta name="description" content="Sign in to your student account.">
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js" defer></script>
+  <script src="js/supabase-config.js" defer></script>
+  <script src="js/supabase-client.js" defer></script>
+  <script src="js/auth-rules.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</head>
+<body data-auth-page="student-login">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header interior-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="KBC Computer Education home"><span class="brand-mark" aria-hidden="true">K<span>↗</span></span><span class="brand-name">KBC<small>Computer Education</small></span></a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+      <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="courses.html">Courses</a><a href="admission.html">Admission</a><a href="results.html">Results</a><a href="notices.html">Notices</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+        <a class="button button-small" href="admission.html#student-enquiry">Apply Now <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+<main id="main"><section class="page-masthead" aria-labelledby="page-title"><div class="container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Student Login</span></nav><p class="eyebrow">ACCOUNT ACCESS</p><h1 id="page-title">Student Login</h1><p class="page-intro">Sign in to your student account.</p></div></section><section class="section auth-section"><div class="container auth-layout"><div class="auth-intro"><p class="eyebrow">KBC COMPUTER EDUCATION</p><h2>Your learning, in one place.</h2><p>Access your own profile and the student dashboard. Other student services will become available in later phases.</p></div><div class="auth-card"><h2>Student Login</h2><noscript><p>JavaScript is required for secure account access. Contact KBC for assistance.</p></noscript><form class="auth-form" data-auth-form method="post" ><fieldset class="auth-fields" data-auth-fields disabled><legend class="visually-hidden">Student Login</legend><div class="form-field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254"></div><div class="form-field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required maxlength="128"></div><button class="button" type="submit">Login<span aria-hidden="true">↗</span></button></fieldset></form><p class="auth-status" data-auth-status role="status" aria-live="polite"></p><div class="auth-links"><a href="forgot-password.html">Forgot Password?</a><a href="student-register.html">Create Student Account</a></div></div></div></section></main>
+  <footer class="site-footer" id="contact"><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">K<span>↗</span></span><span class="brand-name">KBC<small>Computer Education</small></span></a><p>Kaimur Bihar Community<br>Computer Education</p><p>Computer learning.<br>A world of possibilities.</p></div><div><h2>Find your way</h2><div class="footer-navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="courses.html">Courses</a><a href="admission.html">Admission</a><a href="results.html">Results</a><a href="notices.html">Notices</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a></div></div><div class="footer-contact"><h2>Get in touch</h2><address>Durgawati Mahavidyalay,<br>Bichhiya Dumari,<br>Kaimur, Bihar</address><a href="tel:+919006779137">+91 90067 79137 <span aria-hidden="true">↗</span></a><a href="mailto:kaimurbiharcommunity@gmail.com">kaimurbiharcommunity@gmail.com</a></div><div><h2>Stay connected</h2><!-- TODO: Add verified Telegram and WhatsApp Channel URLs, then replace these spans with links. --><span class="social-placeholder">Telegram <small>Link coming soon</small></span><span class="social-placeholder">WhatsApp Channel <small>Link coming soon</small></span></div></div><nav class="account-nav" data-account-nav aria-label="Account navigation"><a href="student-login.html" data-signed-out-link>Student Login</a><a href="teacher-login.html" data-signed-out-link>Teacher Login</a><a data-dashboard-link href="student-dashboard.html" hidden>Dashboard</a><span data-admin-unavailable hidden>Admin portal unavailable</span><button type="button" data-logout hidden>Logout</button><span data-account-status role="status" aria-live="polite"></span></nav><p class="future-note" id="future-pages">For course, admission and institute enquiries, contact KBC Computer Education.</p><div class="footer-bottom"><p>© <span id="copyright-year"></span> KBC Computer Education</p><a href="#main">Back to top <span aria-hidden="true">↑</span></a></div></div></footer>
+  <div class="notice-toast" role="status" aria-live="polite" id="notice-toast"></div>
+</body>
+</html>

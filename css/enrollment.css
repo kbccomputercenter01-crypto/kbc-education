@@ -1,0 +1,8 @@
+.enrollment-layout{max-width:900px;margin:auto;display:grid;gap:24px;min-width:0}
+.enrollment-layout select,.enrollment-layout textarea{width:100%;max-width:100%;min-width:0;font:inherit;padding:12px;border:1px solid var(--border);border-radius:6px;background:white;color:var(--text)}
+.enrollment-layout textarea{resize:vertical}
+.enrollment-layout .button{white-space:normal;cursor:pointer;max-width:100%}
+.enrollment-record{padding:18px 0;border-bottom:1px solid var(--border);overflow-wrap:anywhere;min-width:0}
+.enrollment-record h3{font-size:18px}.enrollment-record .text-link{display:inline-block;margin-top:12px}
+.enrollment-record summary{cursor:pointer;color:var(--blue);padding:10px 0}
+[data-enrollment-root]{min-width:0;overflow-wrap:anywhere}

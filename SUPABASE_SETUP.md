@@ -2,9 +2,10 @@
 
 The existing static pages load Supabase JS 2.117.2 from jsDelivr, followed by
 `js/supabase-config.js` and `js/supabase-client.js`. The client is available as
-`window.kbcSupabase`. No login, tables, data, or portal features are created.
-Session persistence, refresh, and URL session detection are disabled for this
-connection-only phase; revisit these options when implementing authentication.
+`window.kbcSupabase`. Phase 7 adds the real Auth and profile frontend plus a
+database migration. Session persistence, refresh, and URL session detection
+are enabled for the Auth flows, using the `kbc-auth-session` browser storage key.
+See `PHASE7_SETUP.md` before enabling the portal in production.
 
 Configuration contains only the project URL and browser-safe publishable key.
 These values are public by design. Never add secret/service-role keys or a

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kbccomputercenter01-crypto.github.io/kbc-education/sitemap.xml

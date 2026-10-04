@@ -1,0 +1,188 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <title>Pay Course Fee | Razorpay Standard Checkout | KBC Computer Education</title>
+  <meta name="description" content="Pay your KBC Computer Education course fees securely via Razorpay Standard Checkout.">
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/enrollment.css">
+  <!-- Razorpay Standard Checkout Library -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="js/checkout.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header interior-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="KBC Computer Education home">
+        <span class="brand-mark" aria-hidden="true">K<span>↗</span></span>
+        <span class="brand-name">KBC<small>Computer Education</small></span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span><span></span>
+      </button>
+      <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="admission.html">Admission</a>
+        <a href="checkout.html" aria-current="page">Pay Online</a>
+        <a href="results.html">Results</a>
+        <a href="notices.html">Notices</a>
+        <a href="contact.html">Contact</a>
+        <a class="button button-small" href="enroll.html">Enroll Now <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-masthead">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Online Fee Payment</span>
+        </nav>
+        <p class="eyebrow">RAZORPAY STANDARD CHECKOUT</p>
+        <h1>Pay Course Fees Online</h1>
+        <p class="page-intro">Quick and secure fee payment via UPI, Credit/Debit Cards, Net Banking, or Wallets.</p>
+      </div>
+    </section>
+
+    <section class="section auth-section">
+      <div class="container enrollment-layout">
+        <section class="portal-card">
+          <h2>1. Select Course &amp; Student Details</h2>
+          <form id="checkout-form" class="auth-form" onsubmit="return false;">
+            <div class="form-field">
+              <label for="course-select">Select Course</label>
+              <select id="course-select" required>
+                <option value="900000" data-code="ADCA" data-name="ADCA (Advanced Diploma in Computer Applications)">ADCA — ₹9,000</option>
+                <option value="450000" data-code="DCA" data-name="DCA (Diploma in Computer Applications)">DCA — ₹4,500</option>
+                <option value="250000" data-code="CCC" data-name="CCC (Course on Computer Concepts)" selected>CCC — ₹2,500</option>
+                <option value="300000" data-code="DFA" data-name="DFA (Diploma in Financial Accounting)">DFA — ₹3,000</option>
+                <option value="350000" data-code="DCTT" data-name="DCTT (Diploma in Computer Teacher Training)">DCTT — ₹3,500</option>
+                <option value="200000" data-code="C+" data-name="C+ Programming">C+ — ₹2,000</option>
+                <option value="300000" data-code="TALLY_ERP9" data-name="Tally ERP 9">Tally ERP 9 — ₹3,000</option>
+                <option value="350000" data-code="PRIME_TALLY" data-name="Prime Tally">Prime Tally — ₹3,500</option>
+                <option value="150000" data-code="TYPING" data-name="Typing Master">Typing Master — ₹1,500</option>
+                <option value="100" data-code="TEST" data-name="Custom Test Transaction (100 Paise)">Test Mode Payment — ₹1.00 (100 paise)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="student-name">Student Full Name</label>
+              <input id="student-name" name="student_name" type="text" placeholder="e.g. Rahul Kumar" autocomplete="name" required maxlength="80">
+            </div>
+
+            <div class="form-field">
+              <label for="student-email">Email Address</label>
+              <input id="student-email" name="student_email" type="email" placeholder="e.g. rahul@example.com" autocomplete="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="student-phone">Mobile Number</label>
+              <input id="student-phone" name="student_phone" type="tel" placeholder="e.g. 9876543210" autocomplete="tel" required maxlength="15">
+            </div>
+
+            <div class="portal-card" style="background: var(--surface); margin-top: 10px;">
+              <h3 style="font-size: 18px; margin-bottom: 12px;">Payment Summary</h3>
+              <dl class="profile-info" style="margin: 0;">
+                <div>
+                  <dt>Selected Course</dt>
+                  <dd id="summary-course-name">CCC (Course on Computer Concepts)</dd>
+                </div>
+                <div>
+                  <dt>Payable Amount</dt>
+                  <dd id="summary-amount" style="font-weight: 700; color: var(--navy); font-size: 18px;">₹2,500.00</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div style="margin-top: 20px;">
+              <button id="pay-now-button" class="button" type="button" style="width: 100%; font-size: 16px; padding: 14px;">
+                Pay with Razorpay <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </form>
+
+          <div id="payment-status-box" role="status" aria-live="polite" style="margin-top: 20px;"></div>
+        </section>
+
+        <section class="portal-card" id="receipt-card" hidden>
+          <h2 style="color: #1a7f37;">✓ Payment Successful &amp; Verified</h2>
+          <p>Your payment has been received and verified by our server.</p>
+          <dl class="profile-info" style="margin: 20px 0;">
+            <div>
+              <dt>Payment ID</dt>
+              <dd id="receipt-payment-id" style="font-family: monospace; font-size: 13px;">—</dd>
+            </div>
+            <div>
+              <dt>Razorpay Order ID</dt>
+              <dd id="receipt-order-id" style="font-family: monospace; font-size: 13px;">—</dd>
+            </div>
+            <div>
+              <dt>Amount Paid</dt>
+              <dd id="receipt-amount" style="font-weight: 700;">—</dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd style="color: #1a7f37; font-weight: 600;">Server Verified (HMAC SHA-256 Validated)</dd>
+            </div>
+          </dl>
+          <div class="auth-links">
+            <a href="courses.html">Browse Courses</a>
+            <a href="index.html">Return to Home</a>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true">K<span>↗</span></span>
+            <span class="brand-name">KBC<small>Computer Education</small></span>
+          </a>
+          <p>Kaimur Bihar Community<br>Computer Education</p>
+        </div>
+        <div>
+          <h2>Navigation</h2>
+          <div class="footer-navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="courses.html">Courses</a>
+            <a href="admission.html">Admission</a>
+            <a href="checkout.html">Pay Online</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <h2>Get in touch</h2>
+          <address>Durgawati Mahavidyalay,<br>Bichhiya Dumari,<br>Kaimur, Bihar</address>
+          <a href="tel:+919006779137">+91 90067 79137 <span aria-hidden="true">↗</span></a>
+          <a href="mailto:kaimurbiharcommunity@gmail.com">kaimurbiharcommunity@gmail.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="copyright-year"></span> KBC Computer Education</p>
+        <a href="#main">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

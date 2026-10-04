@@ -1,6 +1,7 @@
 # Local environment and private credentials
 .env
 .env.*
+node_modules/
 secrets/
 *.key
 *.pem

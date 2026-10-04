@@ -1,0 +1,27 @@
+{
+  "name": "kbc",
+  "version": "1.0.0",
+  "description": "A standalone Home, About, Courses, Admission, Contact, Results and Notices website for Kaimur Bihar Community Computer Education. Built only with HTML5, CSS3 and vanilla JavaScript. No package installation or build step is required.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/razorpay-api.test.cjs && node tests/auth-rules.test.cjs && node tests/razorpay-security.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbccomputercenter01-crypto/kbc-education.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kbccomputercenter01-crypto/kbc-education/issues"
+  },
+  "homepage": "https://github.com/kbccomputercenter01-crypto/kbc-education#readme",
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1",
+    "razorpay": "^2.9.8"
+  }
+}

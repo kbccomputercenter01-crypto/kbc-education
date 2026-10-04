@@ -1,0 +1,7 @@
+# User handlers validate JWTs via getUser. Webhook validates Razorpay HMAC.
+[functions.create-payment-order]
+verify_jwt = false
+[functions.verify-payment]
+verify_jwt = false
+[functions.payment-webhook]
+verify_jwt = false

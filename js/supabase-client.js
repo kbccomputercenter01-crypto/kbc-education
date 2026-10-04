@@ -1,4 +1,4 @@
-/* Connection only: no login, data queries, or changes to existing page behavior. */
+/* Shared browser client. Authorization is enforced by database RLS. */
 (() => {
   'use strict';
   const config = window.KBC_SUPABASE_CONFIG;
@@ -11,7 +11,18 @@
     return;
   }
   window.kbcSupabase = window.supabase.createClient(config.url, config.publishableKey, {
-    auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false }
+    auth: {
+      persistSession: true,
+      autoRefreshToken: true,
+      detectSessionInUrl: true,
+      storageKey: 'kbc-auth-session'
+    }
+  });
+  // Subscribe immediately so the recovery event is not missed by later scripts.
+  window.kbcRecoveryReady = false;
+  window.kbcSupabase.auth.onAuthStateChange((event) => {
+    if (event === 'PASSWORD_RECOVERY') window.kbcRecoveryReady = true;
+    if (event === 'SIGNED_OUT') window.kbcRecoveryReady = false;
   });
 
   // Explicit read-only connectivity check; does not create users or read student data.
